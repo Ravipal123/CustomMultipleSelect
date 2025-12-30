@@ -1,16 +1,33 @@
-# React + Vite
+## Custom Multiple Select Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a fully custom-built multiple selection dropdown component in React (no external libraries required). It allows users to select multiple options from a dropdown list, displays selected items as removable chips/tags (pills), and provides a clean, modern UI.
 
-Currently, two official plugins are available:
+### Features
+- Multiple selection using native `<select multiple>`
+- Selected items appear as styled chips with a remove (×) button
+- Controlled component using React `useState`
+- Smooth add/remove functionality
+- Responsive and visually appealing design with rounded chips
+- Works with keyboard (Ctrl/Cmd + click) and mouse selection
+- Pure React + inline styles (easy to customize)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Preview
+The component shows:
+- A bordered area at the top displaying selected names as blue pills with a close button
+- A scrollable multiple-select dropdown below to choose more options
 
-## React Compiler
+### How to Use
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Simply import and use the component in your React app:
 
-## Expanding the ESLint configuration
+```jsx
+import CustomMultipleSelect from './CustomMultipleSelect';
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+function App() {
+  return (
+    <div style={{ padding: '20px', maxWidth: '500px' }}>
+      <h3>Select Team Members:</h3>
+      <CustomMultipleSelect />
+    </div>
+  );
+}
